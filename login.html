@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>login</title>
+	<link rel="stylesheet"  href="login.css">
+	<style type="text/css">
+		*{
+	padding: 0;
+	margin: 0;
+	font-family: 'Josefin Sans', sans-serif;
+	box-sizing: border-box;
+}
+.back{
+	background-image: url("login.jpg");
+	width: px;
+	height: 750px;
+	align-items: center;
+
+
+}
+.login{
+	border: 2px solid black;
+	position: relative;
+	top: 35%;
+	left: 40%;
+	width: 300px ;
+	height: 250px;
+	border-radius: 30px;
+	background-color: #000000;
+	opacity: 0.6;
+	box-shadow:  5px 5px 5px #585858 ,-5px -5px 5px #585858 ;
+
+
+
+}
+#hading{
+	color: 	#C80000 ;
+	text-align: center;
+	border: 2px solid #282828;
+	width: 100px;
+	position: relative;
+	left: 90px;
+	top: 10px;
+	border-radius: 30px;
+	background-color: #282828;
+
+
+}
+.input{
+	align-content: center;
+    position: relative;
+    top: 30px;
+    margin: 20px;
+    left: 25px;
+    border: 2px solid transparent;
+    width: 205px;
+    border-radius: 30px;
+    text-decoration: underline;
+    padding: 5px;
+}
+input{
+	width: 200px;
+	height: 35px;
+	align-items: center;
+	border-radius: 30px;
+	text-align: 30px;
+	background-color: #282828;
+	color: white;
+	border: 2px solid transparent;
+	font-size: 15px;
+
+
+    
+}
+#submit{
+	border: 2px solid transparent;
+	border-radius:30px ;
+	width: 80px;
+	padding: 5px;
+	position: relative;
+	top: 20px;
+	left: 100px;
+	background-color: white;
+	color: black;
+	transition: .4s;
+
+}
+#submit:hover{
+      background-color: #D80000 ;
+}
+
+	</style>
+</head>
+<body>
+<form name=f method=post action=login1.jsp>
+	<div class="back">
+
+		<marquee><font color=#0EB3D9><font size=15> WELCOME TO DISTRIBUTOR</marquee>
+		<div class="login">
+			<h2 id="hading">Login</h2>
+			 <div class="input">
+		  	<input type="text" name="t1" placeholder="Id">
+		  	
+		  </div>
+		  <div class="input">
+		  	<input type="password" name="t2" placeholder="Password  ">
+		  </div>
+		  
+		  <button id="submit" type=submit name=b1 value="login">SUBMIT</button>
+		 
+
+		
+	</div>
+
+		</div>
+</form>
+		 
+</body>
+</html>

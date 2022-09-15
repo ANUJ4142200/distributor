@@ -1,0 +1,216 @@
+create or replace trigger bicustomer
+before insert on customer for each row
+declare
+         cursor c1 is select*from customer;
+	 z c1%rowtype;
+begin
+	if(:new.id is null)then
+	 raise_application_error(-20001,'customer id should not null');
+	end if;
+
+	if(:new.id not like'C%')then
+	 raise_application_error(-20002,'customer id starts with capital C');
+	end if;
+
+        for z in c1 
+	loop
+		if(z.id=:new.id)then
+	 raise_application_error(-20003,'customer id already exist');
+	end if;
+        end loop;
+end;
+/
+
+
+
+
+
+create or replace trigger biemployee
+before insert on employee for each row
+declare
+         cursor c1 is select*from employee;
+	 z c1% rowtype;
+begin
+	if(:new.id is null)then
+	 raise_application_error(-20001,'employee id should not null');
+	end if;
+
+	if(:new.id not like'E%')then
+	 raise_application_error(-20002,'employee id starts with capital E');
+	end if;
+
+        for z in c1 
+	loop
+		if(z.id=:new.id)then
+	 raise_application_error(-20003,'employee id already exist');
+	end if;
+        end loop;
+end;
+/
+
+
+
+
+
+
+
+
+create or replace trigger bilocation
+before insert on location for each row
+declare
+         cursor c1 is select*from location;
+	 z c1% rowtype;
+begin
+	if(:new.id is null)then
+	 raise_application_error(-20001,'location id should not null');
+	end if;
+
+	if(:new.id not like'L%')then
+	 raise_application_error(-20002,'location id starts with capital L');
+	end if;
+
+        for z in c1 
+	loop
+		if(z.id=:new.id)then
+	 raise_application_error(-20003,'location id already exist');
+	end if;
+        end loop;
+end;
+/
+
+
+
+
+
+create or replace trigger bimanager
+before insert on manager for each row
+declare
+         cursor c1 is select*from manager;
+	 z c1% rowtype;
+begin
+	if(:new.fnm is null)then
+	 raise_application_error(-20001,'manager first name should not null');
+	end if;
+
+	if(:new.lnm is null)then
+	 raise_application_error(-20002,'manager last name should not null');
+	end if;
+
+     
+end;
+/
+
+
+
+
+
+create or replace trigger bijob
+before insert on job for each row
+declare
+         cursor c1 is select*from job;
+	 z c1% rowtype;
+begin   
+	
+	if(:new.salary not between 10000 and 50000) then
+         raise_application_error(-20000,'salary between 10000 to 50000');
+         end if;
+  
+        
+	if(:new.job_id is null)then
+	 raise_application_error(-20001,'jod id should not null');
+	end if;
+        
+
+        
+	if(:new.job_id not like'J%')then
+	 raise_application_error(-20002,'job name start with capital J');
+	end if;
+        
+
+        for z in c1 
+	loop
+		if(z.job_id=:new.job_id)then
+	        raise_application_error(-20003,'job id already exist');
+	end if;
+        end loop;     
+end;
+/
+
+
+
+
+create or replace trigger biproduct
+before insert on product for each row
+declare
+         cursor c1 is select*from product;
+	 z c1% rowtype;
+begin   
+
+  
+        
+	if(:new.id is null)then
+	 raise_application_error(-20001,' id should not null');
+	end if;
+        
+
+        
+	if(:new.id not like'P%')then
+	 raise_application_error(-20002,'Product ID start with capital P');
+	end if;
+     
+end;
+/
+
+
+
+
+create or replace trigger bicategory
+before insert on category for each row
+declare
+         cursor c1 is select*from category;
+	 z c1% rowtype;
+begin   
+
+  
+        
+	if(:new.id is null)then
+	 raise_application_error(-20001,' id should not null');
+	end if;
+        
+
+        
+	if(:new.id not like'C%')then
+	 raise_application_error(-20002,'CATEGORY ID start with capital C');
+	end if;
+     
+end;
+/
+
+
+
+
+
+create or replace trigger bisupplier
+before insert on supplier for each row
+declare
+         cursor c1 is select*from supplier;
+	 z c1% rowtype;
+begin   
+
+  
+        
+	if(:new.id is null)then
+	 raise_application_error(-20001,' id should not null');
+	end if;
+        
+
+        
+	if(:new.id not like'S%')then
+	 raise_application_error(-20002,'SUPPLIER ID start with capital S');
+	end if;
+     
+end;
+/
+
+
+

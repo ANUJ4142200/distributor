@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Job</title>
+  <style type="text/css">
+    body {
+          background-image: url("job.jpg");
+          background-repeat: repeat;
+          background-size: cover;
+          }
+          nav{
+          
+            border: 2px solid transparent;
+            width: 100%;
+            overflow: auto;
+             background-color:   #4d1a00;
+             border-radius: 0px 40px 0px 40px;
+             box-shadow: 5px 7px 4px  #606060 ;
+
+          }
+          .button{
+            border: 2px solid transparent;
+            border-radius: 50px 0px 50px 0px;
+            float: center;
+            margin: 20px;
+            margin-left: 40px;
+            padding: 5px;
+            position: relative;
+            left: 70px;
+            width: 80px;
+            border-radius: 10px;
+            color: black;
+            background-color:  #ffff80;
+            transition: 0.5s;
+            transition: transform .5s;
+          }
+          .button:hover{
+            background-color: red;
+            transform: scale(1.2);
+
+          }
+          .id{
+            border: 2px solid transparent;
+            width: 300px;
+            height: 250px;
+            position: relative;
+            top: 70px;
+            left: 10%;
+            background-color:  #ff884d;
+            border-radius: 50px 0px 50px 0px ;
+            box-shadow: 5px 5px 4px #e6ffff , -5px -5px 4px #e6ffff  ;
+
+
+          }
+          .ctt{
+            position: relative;
+            left: 60px;
+            top: 10px;
+            margin-top: 25px;
+            padding: 5px;
+            border-radius: 20px;
+
+
+          }
+          option{
+            background-color: greenyellow;
+          }
+  </style>
+</head>
+<body>
+ <form name=f method=post action=job1.jsp>
+    <marquee><font color=#0EB3D9><font size=40>WELCOME TO JOB</marquee>
+     <div>
+      <nav>
+            <input type=button value="New" onclick="a1()"  class="button">
+             <input type=submit value="Save" name=b1  class=" button">
+             <input type=submit value="Update" name=b1  class="button">
+             <input type=submit value="Delete" name=b1  class=" button">
+             <input type=submit value="Search" name=b1  class=" button">
+             <input type=submit value="All Search" name=b1  class=" button">
+            
+             <input type=button value="Menu" onclick="callme()"  class=" button ">
+                
+      </nav>
+      <div class="id">
+        
+        <input class="ctt" type="text" placeholder=" JOB_ID" name="t1">
+        <input class="ctt" type="text" placeholder=" JOB_TITLE" name="t2">
+        <input class="ctt" type="text" placeholder=" SALARY" name="t3">
+        
+        
+      </div>
+
+    </div>   
+ </form>
+<script>
+        function callme()
+        {
+          window.open("menu.html","_self")
+        }
+        
+        function a1()
+    	{
+     	 f.t1.value=""
+    	 f.t2.value=""
+    	 f.t3.value=""
+    	 
+    	}
+</script>
+
+</body>
+</html>
